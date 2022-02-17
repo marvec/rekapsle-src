@@ -1,0 +1,59 @@
+doctype html
+html(lang='en')
+
+    include includes/header.pug
+
+    body#page-top
+
+        section.bg-light.masthead
+            .container.px-5
+                .row
+                    .col-12
+                        h1.text-center Seznam zpracovatelů
+                        p.text-center Naposledy aktualizováno 17.2.2022.
+                        table.table.table-striped
+                            thead
+                                tr
+                                    th(scope="col") Zpracovatel
+                                    th(scope="col") Účel
+                                    th(scope="col") Země
+                                    th(scope="col") Dokumentace
+                            tbody
+                                tr
+                                    td(scope="row") UOL a.s., IČ: 24753157, se sídlem Roztylská 1860/1, Chodov, 148&nbsp;00 Praha 4, zapsána v obchodním rejstříku vedeném Městským soudem v Praze, oddíl B, vložka 16585
+                                    td Vedení účetnictví
+                                    td Česká republika
+                                    td
+                                tr
+                                    td(scope="row") Google LLC.
+                                    td E-mailový server a produktová analytika
+                                    td Spojené státy americké
+                                    td
+                                        a(href="https://policies.google.com/privacy?hl=cs&amp;gl=cz", target="_blank") policies.google.com/privacy
+                                tr
+                                    td(scope="row") Web4U s.r.o.
+                                    td Hosting webových stránek
+                                    td Česká Republika
+                                    td
+                                        a(href="https://www.web4u.cz/web_zend/public/documents/2018_05_podminky_ochrany_osobnich_udaju.pdf", target="_blank") podminky_ochrany_osobnich_udaju.pdf
+                                tr
+                                    td(scope="row") MailerLite, MailerLite Inc.
+                                    td Marketing: zásílání newsletterů
+                                    td Litva, EU
+                                    td
+                                        a(href="https://www.mailerlite.com/legal/privacy-policy", target="_blank") mailerlite.com/legal/privacy-policy/
+                                        | ,
+                                        a(href="https://www.mailerlite.com/legal/data-processing-agreement", target="_blank") Dodatek o zpracování údajů
+                                tr
+                                    td(scope="row") Smartsupp.com, s.r.o., IČ: 03668681, se sídlem Milady Horákové 1957/13, Černá Pole, 602&nbsp;00 Brno, zapsána v obchodním rejstříku vedeném Krajským soudem v Brně, oddíl C, vložka 86206
+                                    td Produktová analytika
+                                    td Česká republika
+                                    td
+                                        a(href="https://www.smartlook.com/cs/privacy", target="_blank") www.smartlook.com/cs/privacy
+                        p
+                            | V případě jakýchkoliv otázek a problémů nás prosím kontaktujte na
+                            |
+                            a(href="kontakt.html") www.rekapsle.cz
+                            |.
+
+    include includes/footer.pug
