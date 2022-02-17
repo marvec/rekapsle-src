@@ -1,0 +1,17 @@
+// Navigation
+nav#mainNav.navbar.navbar-expand-lg.navbar-light.fixed-top.shadow-sm
+    .container.px-5
+        a.navbar-brand.d-flex.align-items-center.fw-bold(href='#page-top')
+            img.me-3.d-inline-block.align-top(src="assets/rekapsle-logo-single.svg", height="40px", alt="Rekapsle logo")
+            | Rekapsle
+        button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
+            | Nabídka
+            i.bi-list
+        #navbarResponsive.collapse.navbar-collapse
+            ul.navbar-nav.ms-auto.me-4.my-3.my-lg-0
+                li.nav-item
+                    a.nav-link.me-lg-3(href='kontakt.html') Kontakt
+            a.btn.btn-success.rounded-pill.px-3.mb-2.mb-lg-0(href="index.html#vyzkouset")
+                span.d-flex.align-items-center
+                    span.small Vyzkoušet
+                    i.bi-caret-right-fill.ms-2

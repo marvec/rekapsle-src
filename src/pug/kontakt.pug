@@ -1,0 +1,35 @@
+doctype html
+html(lang='en')
+
+    include includes/header.pug
+
+    body#page-top
+
+        include includes/nav-bar.pug
+
+        section.bg-light.masthead
+            .container.px-5
+                .row
+                    .col-12
+                        h1.text-center Napište nám
+
+                        form.my-5
+                            .mb-3
+                                label.form-label(for="inputName") Vaše celé jméno
+                                input#inputName.form-control(type="text")
+                            .mb-3
+                                label.form-label(for="inputEmail") Váš email
+                                input#inputEmail.form-control(type="email", aria-describedby="emailHelp")
+                                #emailHelp.form-text Váš email nikdy nesdělujeme nikomu dalšímu.
+                            .mb-3
+                                label.form-label(for="inputMessage") Váš vzkaz
+                                textarea#inputMessage.form-control(rows="5")
+                            .mb-5.form-check
+                                input#agreementCheck.form-check-input(type="checkbox",onchange="document.getElementById('contactSubmit').disabled = !this.checked;")
+                                label.form-check-label(for="agreementCheckt")
+                                    | Souhlasím se
+                                    |
+                                    a(href="zasady.html") zpracováním osobních údajů
+                            button#contactSubmit.btn.btn-success(type="submit", disabled=true) Odeslat
+
+    include includes/footer.pug

@@ -1,47 +1,12 @@
 doctype html
 html(lang='en')
 
-    head
-
-        meta(charset='utf-8')
-        meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
-        meta(name='description', content='')
-        meta(name='author', content='WellBe s.r.o.')
-
-        title New Age - Start Bootstrap Theme
-
-        link(rel='icon', type='image/x-icon', href='assets/favicon.ico', sizes="16x16 24x24 32x32 64x64")
-
-        // Bootstrap icons
-        link(href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css', rel='stylesheet')
-
-        // Google fonts
-        link(rel='preconnect', href='https://fonts.googleapis.com')
-        link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin=true)
-        link(href='https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap', rel='stylesheet')
-
-        // Core theme CSS (includes Bootstrap)
-        link(href='css/styles.css', rel='stylesheet')
+    include includes/header.pug
 
     body#page-top
 
-        // Navigation
-        nav#mainNav.navbar.navbar-expand-lg.navbar-light.fixed-top.shadow-sm
-            .container.px-5
-                a.navbar-brand.d-flex.align-items-center.fw-bold(href='#page-top')
-                    img.me-3.d-inline-block.align-top(src="assets/rekapsle-logo-single.svg", height="40px", alt="Rekapsle logo")
-                    | Rekapsle
-                button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
-                    | Nabídka
-                    i.bi-list
-                #navbarResponsive.collapse.navbar-collapse
-                    ul.navbar-nav.ms-auto.me-4.my-3.my-lg-0
-                    button.btn.btn-success.rounded-pill.px-3.mb-2.mb-lg-0(data-bs-toggle='modal', data-bs-target='#feedbackModal')
-                        span.d-flex.align-items-center
-                            span.small Vyzkoušet
-                            i.bi-caret-right.ms-2
+        include includes/nav-bar.pug
 
-        // Mashead header
         header.masthead
             .container.px-5
                 .row.gx-5.align-items-center
@@ -56,7 +21,7 @@ html(lang='en')
                                 | Čistě.
                             p.lead.fw-normal.text-muted.mb-5 Vyzkoušejte různé druhy pečlivě vybraných káv z lokálních pražíren v plně kompostovatelných kapslích bez zbytečného nepořádku a starostí.
                             .d-flex.flex-column.flex-lg-row.justify-content-end
-                                a.me-lg-3.mb-4.mb-lg-0(href='#!')
+                                a.me-lg-3.mb-4.mb-lg-0(href='#nabidka')
                                     button.btn.btn-success.rounded-pill.px-3.mb-2.mb-lg-0(data-bs-toggle='modal', data-bs-target='#feedbackModal')
                                         span.small Zjisti víc
                                         i.bi-caret-right-fill.ms-2
@@ -98,98 +63,94 @@ html(lang='en')
                                 h3.font-alt 03 Bez starostí
                                 p.text-muted.mb-0 Podle toho, kolik kávy týdně pijete, kolik Vás doma nebo v kanceláři je a jakou chuť kávy máte rádi, Vám budeme pravidelně doručovat zásobu kapslí na týden dopředu. Přesně víte, odkud Vaše káva pochází, a že je čerstvě upražená. Kávu si vychutnáte z Vašeho běžného kávovaru a bez nepořádku.
 
-        section
-            .container.px-5
-                .row.gx-3.align-items-center
-                    .col-lg-4.mb-5.mb-lg-0
-                        .container-fluid
-                            .card.text-center
-                                .card-header Kávový novic
-                                .card-body
-                                    h5.card-title.mb-3 5x 2 kapsle každý týden
-                                    p.card-text.text-center vhodné pro 1-2 osoby
-                                    p.card-text.text-center objevujte tu pravou chuť pro vás
-                                    p.card-text.text-center
-                                        strong 165 Kč
-                                        s 225 Kč
-                                        | / týden
-                                    a.btn.btn-success(href="#")
-                                        span.small Vyzkoušet
-                                        i.bi-caret-right-fill.ms-2
-                    .col-lg-4.mb-5.mb-lg-0
-                        .container-fluid
-                            .card.text-center
-                                .card-header
-                                    | Milujeme kávu
-                                    span.badge.rounded-pill.bg-success Oblíbené
-                                .card-body
-                                    h5.card-title.mb-3 10x 2 kapsle každý týden
-                                    p.card-text.text-center vhodné pro 1-2 osoby
-                                    p.card-text.text-center oblíbená chuť a k tomu trocha experimentování
-                                    p.card-text.text-center
-                                        strong 265 Kč
-                                        s 335 Kč
-                                        | / týden
-                                    a.btn.btn-success(href="#")
-                                        span.small Vyzkoušet
-                                        i.bi-caret-right-fill.ms-2
-                    .col-lg-4.mb-5.mb-lg-0
-                        .container-fluid
-                            .card.text-center
-                                .card-header Bez kávy nevstanu
-                                .card-body
-                                    h5.card-title.mb-3 10x 3 kapsle každý týden
-                                    p.card-text.text-center vhodné pro 2-3 osoby
-                                    p.card-text.text-center oblíbenou chuť si dáte i opakované
-                                    p.card-text.text-center
-                                        strong 295 Kč
-                                        s 365 Kč
-                                        | / týden
-                                    a.btn.btn-success(href="#")
-                                        span.small Vyzkoušet
-                                        i.bi-caret-right-fill.ms-2
-                .row.my-5.mb-lg-0
-                    p.lead.fw-normal.text-muted Nenašli jste ten správný balíček? Nakombinujte si svůj vlastní...
+        section.packages#nabidka
+            .packages-content
+                .container.px-5
+                    .row.gx-3.align-items-center
+                        .col-lg-4.mb-5.mb-lg-0
+                            .container-fluid
+                                .card.text-center
+                                    .card-header Kávový novic
+                                    .card-body
+                                        h5.card-title.mb-3 5x 2 kapsle každý týden
+                                        p.card-text.text-center vhodné pro 1-2 osoby
+                                        p.card-text.text-center objevujte tu pravou chuť pro vás
+                                        p.card-text.text-center
+                                            strong 165 Kč
+                                            | !{' '}
+                                            s 225 Kč
+                                            |
+                                            | / týden
+                                        a.btn.btn-success(href="#vyzkouset")
+                                            span.small Vyzkoušet
+                                            i.bi-caret-right-fill.ms-2
+                        .col-lg-4.mb-5.mb-lg-0
+                            .container-fluid
+                                .card.text-center(style="transform: scale(1.1)")
+                                    .card-header
+                                        | Milujeme kávu
+                                        span.ms-2.badge.rounded-pill.bg-success Oblíbené
+                                    .card-body
+                                        h5.card-title.mb-3 10x 2 kapsle každý týden
+                                        p.card-text.text-center vhodné pro 1-2 osoby
+                                        p.card-text.text-center oblíbená chuť a k tomu trocha experimentování
+                                        p.card-text.text-center
+                                            strong 265 Kč
+                                            | !{' '}
+                                            s 335 Kč
+                                            |
+                                            | / týden
+                                        a.btn.btn-success(href="#vyzkouset")
+                                            span.small Vyzkoušet
+                                            i.bi-caret-right-fill.ms-2
+                        .col-lg-4.mb-5.mb-lg-0
+                            .container-fluid
+                                .card.text-center
+                                    .card-header Bez kávy nevstanu
+                                    .card-body
+                                        h5.card-title.mb-3 10x 3 kapsle každý týden
+                                        p.card-text.text-center vhodné pro 2-3 osoby
+                                        p.card-text.text-center oblíbenou chuť si dáte i opakované
+                                        p.card-text.text-center
+                                            strong 295 Kč
+                                            | !{' '}
+                                            s 365 Kč
+                                            |
+                                            | / týden
+                                        a.btn.btn-success(href="#vyzkouset")
+                                            span.small Vyzkoušet
+                                            i.bi-caret-right-fill.ms-2
+                    .row.my-5.mb-lg-0.text-end
+                        p.mt-3.lead.fw-normal.text-white Nenašli jste ten správný balíček? Nakombinujte si svůj vlastní...
+                            a.ms-3.btn.btn-success(href="#vyzkouset")
+                                span.small Vytvořit vlastní
+                                i.bi-caret-right-fill.ms-2
 
 
 
         // Call to action section
-        section.cta
+        section.cta#vyzkouset
             .cta-content
                 .container.px-5
-                    h2.text-white.display-1.lh-1.mb-4
-                        | Stop waiting.
-                        br
-                        | Start building.
-                    a.btn.btn-outline-light.py-3.px-4.rounded-pill(href='https://startbootstrap.com/theme/new-age', target='_blank') Download for free
+                    .row.gx-5.align-items-center
+                        .col-lg-6
+                            h2.display-2.fw-bold.mb-5 Objednat předplatné
+                            p Omlouváme se, o službu je velký zájem a chceme zajistit vysokou kvalitu služby.
+                            p Usilovně pracujeme na navýšení kapacity. Zatím se můžete nezávazně přihlásit na čekací listinu.
+                        .col-lg-6
+                            form.my-5
+                                .mb-3
+                                    input#inputName.form-control(type="text", placeholder="Vaše celé jméno")
+                                .mb-3
+                                    input#inputEmail.form-control(type="email", aria-describedby="emailHelp", placeholder="Váš email")
+                                .mb-5.form-check
+                                    input#agreementCheck.form-check-input(type="checkbox",onchange="document.getElementById('contactSubmit').disabled = !this.checked;")
+                                    label.form-check-label.small(for="agreementCheckt")
+                                        | Souhlasím se
+                                        |
+                                        a(href="zasady.html") zpracováním osobních údajů
+                                button#contactSubmit.btn.btn-success(type="submit", disabled=true)
+                                    i.bi-cart4.me-2
+                                    | Nezávazně přihlásit
 
-        // Footer
-        footer.bg-gradient-primary-to-secondary.text-center.py-5
-            .container.px-5
-                .text-white-50.small
-                    .mb-2
-                        | &copy; WellBe s.r.o. 2022. Všechna práva vyhrazena.
-                        br
-                        | Sídlo Purkyňova 649/127, Medlánky, 612 00 Brno. IČ: 05830931
-                        br
-                        | Zapsáno ve veřejném rejstříku vedeném Krajským soudem v Brně, oddíl C, vložka 98394.
-                    a(href='#!') Zásady ochrany osobních údajů
-                    span.mx-1 &middot;
-                    a(href='#!') Seznam zpracovatelů
-                    span.mx-1 &middot;
-                    a(href='#!') Prohlášení o cookies
-
-        include includes/feedback-modal.pug
-
-        // Bootstrap core JS
-        script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js')
-
-        // Core theme JS
-        script(src='js/scripts.js')
-
-        // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-        // * *                               SB Forms JS                               * *
-        // * * Activate your form at https://startbootstrap.com/solution/contact-forms * *
-        // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-
-        script(src='https://cdn.startbootstrap.com/sb-forms-latest.js')
+    include includes/footer.pug
